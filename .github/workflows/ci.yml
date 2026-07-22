@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system deps (ffmpeg)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Byte-compile all modules (syntax check)
+        run: python -m py_compile $(find . -name "*.py" -not -path "./.venv/*")
+
+      - name: Import smoke test
+        run: |
+          python -c "
+          from core.models import Project
+          from templates.template_loader import list_templates, apply_template
+          from engines.render_engine import build_schedule
+          p = Project()
+          apply_template(p, 'neon_pulse')
+          p.quiz.title = 'CI Smoke Test'
+          q = p.quiz.add_blank_question()
+          q.prompt = 'Sample?'
+          for i, opt in enumerate(q.options):
+              opt.text = f'Option {i}'
+          q.correct_option_id = q.options[0].id
+          schedule = build_schedule(p)
+          assert len(schedule) == 6, schedule
+          print('Smoke test passed:', len(list_templates()), 'templates found')
+          "
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: build-check
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t ai-quiz-studio:ci .
