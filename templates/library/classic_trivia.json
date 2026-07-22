@@ -1,0 +1,43 @@
+{
+  "id": "classic_trivia",
+  "name": "Classic Trivia",
+  "description": "Warm game-show gradient with bold typewriter fun facts. Perfect for general knowledge quizzes.",
+  "background": {
+    "type": "gradient",
+    "color_start": "#F2994A",
+    "color_end": "#F2C94C",
+    "gradient_angle": 110,
+    "blur": 0,
+    "overlay_opacity": 0.1
+  },
+  "font": {
+    "family": "Montserrat",
+    "source": "google",
+    "size": 62,
+    "color": "#1B1B1F",
+    "bold": true,
+    "stroke_color": "#FFFFFF",
+    "stroke_width": 2
+  },
+  "timing": {
+    "intro": 3.5,
+    "question": 4.5,
+    "timer": 6.0,
+    "answer_reveal": 3.5,
+    "fun_fact": 4.5,
+    "outro": 3.0
+  },
+  "render": {
+    "format": "shorts",
+    "fps": 30,
+    "quality": "high"
+  },
+  "animations": {
+    "intro": {"type": "fade", "duration": 0.8, "intensity": 1.0},
+    "question": {"type": "slide", "duration": 0.6, "direction": "up", "intensity": 1.0},
+    "timer": {"type": "bounce", "duration": 0.5, "intensity": 0.8},
+    "answer_reveal": {"type": "zoom", "duration": 0.6, "intensity": 1.0},
+    "fun_fact": {"type": "typewriter", "duration": 2.5, "intensity": 1.0},
+    "outro": {"type": "fade", "duration": 1.0, "intensity": 1.0}
+  }
+}

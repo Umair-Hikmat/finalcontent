@@ -1,0 +1,43 @@
+{
+  "id": "minimal_clean",
+  "name": "Minimal Clean",
+  "description": "Soft flat gradient, no particles, gentle fades. Ideal for educational or corporate quizzes.",
+  "background": {
+    "type": "gradient",
+    "color_start": "#2C3E50",
+    "color_end": "#4CA1AF",
+    "gradient_angle": 90,
+    "blur": 0,
+    "overlay_opacity": 0.0
+  },
+  "font": {
+    "family": "Inter",
+    "source": "google",
+    "size": 58,
+    "color": "#FFFFFF",
+    "bold": true,
+    "stroke_color": null,
+    "stroke_width": 0
+  },
+  "timing": {
+    "intro": 2.5,
+    "question": 4.0,
+    "timer": 5.0,
+    "answer_reveal": 3.0,
+    "fun_fact": 4.0,
+    "outro": 2.5
+  },
+  "render": {
+    "format": "youtube",
+    "fps": 30,
+    "quality": "high"
+  },
+  "animations": {
+    "intro": {"type": "fade", "duration": 0.6, "intensity": 1.0},
+    "question": {"type": "fade", "duration": 0.5, "intensity": 1.0},
+    "timer": {"type": "fade", "duration": 0.4, "intensity": 1.0},
+    "answer_reveal": {"type": "fade", "duration": 0.5, "intensity": 1.0},
+    "fun_fact": {"type": "fade", "duration": 0.5, "intensity": 1.0},
+    "outro": {"type": "fade", "duration": 0.8, "intensity": 1.0}
+  }
+}

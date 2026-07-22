@@ -1,0 +1,45 @@
+{
+  "id": "neon_pulse",
+  "name": "Neon Pulse",
+  "description": "High-energy neon gradient with floating particles. Great for pop-culture and gaming quizzes.",
+  "background": {
+    "type": "particles",
+    "color_start": "#FF0080",
+    "color_end": "#7928CA",
+    "gradient_angle": 135,
+    "particle_count": 70,
+    "particle_color": "#FFFFFF",
+    "blur": 0,
+    "overlay_opacity": 0.0
+  },
+  "font": {
+    "family": "Poppins",
+    "source": "google",
+    "size": 66,
+    "color": "#FFFFFF",
+    "bold": true,
+    "stroke_color": "#000000",
+    "stroke_width": 3
+  },
+  "timing": {
+    "intro": 3.0,
+    "question": 4.0,
+    "timer": 5.0,
+    "answer_reveal": 3.0,
+    "fun_fact": 4.0,
+    "outro": 3.0
+  },
+  "render": {
+    "format": "shorts",
+    "fps": 30,
+    "quality": "high"
+  },
+  "animations": {
+    "intro": {"type": "zoom", "duration": 0.7, "intensity": 1.0},
+    "question": {"type": "slide", "duration": 0.5, "direction": "left", "intensity": 1.0},
+    "timer": {"type": "bounce", "duration": 0.6, "intensity": 1.0},
+    "answer_reveal": {"type": "glow", "duration": 0.5, "intensity": 1.2},
+    "fun_fact": {"type": "typewriter", "duration": 2.0, "intensity": 1.0},
+    "outro": {"type": "fade", "duration": 0.8, "intensity": 1.0}
+  }
+}
