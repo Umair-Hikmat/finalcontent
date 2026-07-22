@@ -1,0 +1,12 @@
+streamlit>=1.36.0
+pydantic>=2.7.0
+moviepy>=1.0.3
+Pillow>=10.3.0
+numpy>=1.26.0
+imageio>=2.34.0
+imageio-ffmpeg>=0.5.1
+requests>=2.31.0
+fonttools>=4.51.0
+python-slugify>=8.0.4
+cachetools>=5.3.3
+tqdm>=4.66.4

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+data/exports/*.mp4
+data/projects/*.json
+!data/exports/.gitkeep
+!data/projects/.gitkeep
+assets/fonts/*.ttf
+!assets/fonts/.gitkeep
+.streamlit/secrets.toml
